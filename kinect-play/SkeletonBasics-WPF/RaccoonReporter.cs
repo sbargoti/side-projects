@@ -13,7 +13,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     class RaccoonReporter
     {
         private SerialPort mSerialPort;
-        private ConcurrentQueue<String> mReports = new ConcurrentQueue<String>();
+        private String mLatestReport;
+        private volatile Boolean mShouldReport;
 
         public void Open(){
             mSerialPort = new System.IO.Ports.SerialPort("COM11");
@@ -26,7 +27,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             try
             {
                 mSerialPort.Open();
-                Report(0, 0);
+                RequestReport(0, 0);
             }
             catch (Exception e)
             {
@@ -51,36 +52,41 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             while (true)
             {
                 doReport();
-                Thread.Sleep(5);
+                Thread.Sleep(2);
             }
         }
 
+        public void RequestReport(int lhPos, int rhPos)
+        {
+            // report between [0,80]
+            string report = lhPos + "\n";
+            if (!report.Equals(mLatestReport))
+            {
+                mLatestReport = report;
+                mShouldReport = true;
+            }
+        }
 
         private void doReport(){
 
-            string report;
-
-            Boolean isSuccess = mReports.TryDequeue(out report);
-            if (!isSuccess)
+            if (!mShouldReport)
             {
                 return;
             }
-
+        
             try
             {
-                Log("Sending report: " + report);
-                mSerialPort.Write(report);
+                Log("Sending report: " + mLatestReport);
+                if (mSerialPort.IsOpen)
+                {
+                    mSerialPort.Write(mLatestReport);
+                }
+                mShouldReport = false;
             }
             catch (Exception e)
             {
                 Log("Unable to write connection: " + e.StackTrace.ToString());
             }
-        }
-
-        public void Report(int lhPos, int rhPos)
-        {
-            // report between [0,80]
-            mReports.Enqueue(lhPos+"\n");
         }
 
         public void Close(){

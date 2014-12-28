@@ -22,3 +22,15 @@ C:\development\sentinel\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF_MarkupCo
 C:\development\sentinel\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.g.resources
 C:\development\sentinel\SkeletonBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
 C:\development\sentinel\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.Cache
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.exe
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.pdb
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.exe
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.pdb
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csprojResolveAssemblyReference.cache
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\MainWindow.baml
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\App.g.cs
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.g.resources
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+C:\development\side-projects\side-projects\kinect-play\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.Cache

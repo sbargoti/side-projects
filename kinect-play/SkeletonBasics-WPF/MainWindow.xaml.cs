@@ -329,7 +329,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
     public static void Log(string msg)
     {
-        File.AppendAllText(mLogFileName, System.DateTime.Now.ToString("h:mm:ss tt")+": "+msg + "\n");
+        String logMsg = System.DateTime.Now.ToString("h:mm:ss tt")+": "+msg + "\n\r";
+        File.AppendAllText(mLogFileName, logMsg);
+        Console.Write(logMsg);
     }
 
     private void ReportHandPositions(Skeleton skel)
@@ -337,7 +339,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         double lhPos = GetNormalisedPosition(skel, JointType.WristLeft, JointType.ShoulderCenter);
         double rhPos = GetNormalisedPosition(skel, JointType.WristRight, JointType.ShoulderCenter);
         
-         mReporter.Report((int) lhPos, (int) rhPos);
+         mReporter.RequestReport((int) lhPos, (int) rhPos);
     }
         
     private double GetNormalisedPosition(Skeleton skel, JointType targetJointType, JointType anchorJointType){
